@@ -1,0 +1,9 @@
+app:
+  image
+  command
+mongo:
+  image: mongo:lastes
+  port:
+    - "27017: 27017"
+  volumes:
+    - ./app: /app
