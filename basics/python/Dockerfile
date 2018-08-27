@@ -16,7 +16,9 @@ RUN python$VER -m pip install pip --upgrade
 # COPY PROJECT FILES
 RUN mkdir /$DIR
 WORKDIR /$DIR
-ADD . .
+ADD . /$DIR
+
+# docker run --rm -it -v "$(pwd)"/:/code 127f87f3b03b
 VOLUME .
 
 # requirements.txt

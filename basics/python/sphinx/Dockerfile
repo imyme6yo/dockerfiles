@@ -24,7 +24,7 @@ RUN apk add make
 # COPY PROJECT FILES
 RUN mkdir /$DIR
 WORKDIR /$DIR
-ADD . .
+ADD . /$DIR
 VOLUME .
 
 # requirements.txt
