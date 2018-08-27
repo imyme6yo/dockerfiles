@@ -10,6 +10,9 @@ ARG REQUIREMENT=requirements.text
 # MAINTAINER
 MAINTAINER jon "imyme6yo@gmail.com"
 
+# install git
+RUN apk update && apk upgrade && apk add --no-cache git
+
 # upgrade pip
 RUN python$VER -m pip install pip --upgrade 
 
@@ -19,7 +22,7 @@ WORKDIR /$DIR
 ADD . /$DIR
 
 # docker run --rm -it -v "$(pwd)"/:/code 127f87f3b03b
-VOLUME .
+VOLUME /$dir 
 
 # requirements.txt
 # RUN pip$VER install -r $REQUIREMENT
