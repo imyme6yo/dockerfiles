@@ -9,7 +9,7 @@ UBUNTU
 WINDOWS
 
 
-RUNNING CONTAINER FOR GUI
+RUNNING CONTAINER WITH GUI
 
 iOS
 
@@ -23,3 +23,9 @@ UBUNTU
 WINDOWS
 
 
+REFERENCES
+
+http://moordev.tistory.com/173
+http://wiki.ros.org/docker/Tutorials/GUI
+http://somatorio.org/en/post/running-gui-apps-with-docker/
+https://stackoverflow.com/questions/43015536/xhost-command-for-docker-gui-apps-eclipse
