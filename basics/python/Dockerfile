@@ -1,21 +1,21 @@
-#ARGUMENT OF VERSION
-#Date 20180912
+# ARGUMENT OF VERSION
+# DATE: 20180912
 ARG VER=3.7
 
 FROM python:$VER-alpine3.7
 
-#ARGUMENTS OF CONTAINER
-ARG VER=3.7
+# ARGUMENTS OF CONTAINER
+# ARG VER=3.7
 ARG DIR=code
 ARG REQUIREMENT=requirements.text
 
 # MAINTAINER
 MAINTAINER jon "imyme6yo@gmail.com"
 
-# install git
-RUN apk update && apk upgrade && apk add --no-cache git
+# INSTALL PACKAGES
+RUN apk update && apk upgrade
 
-# upgrade pip
+# UPGRADE PIP
 RUN python$VER -m pip install pip --upgrade 
 
 # COPY PROJECT FILES
