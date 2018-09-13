@@ -18,7 +18,7 @@ LINUX/UNIX
 UBUNTU
 
 (host)$ xhost +local:root
-(host)$ docker run --rm -it -v /run/user/1000:/run/user/1000 -v $"(pwd)"/:/code -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc=host --shm-size=1024m --net=host -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=/run/user/1000 
+(host)$ docker run --rm -it -v /run/user/1000:/run/user/1000 -v "$(pwd)"/:/code -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc=host --shm-size=1024m --net=host -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=/run/user/1000 
 
 WINDOWS
 
