@@ -9,15 +9,15 @@ MAINTAINER jon "imyme6yo@gmail.com"
 ARG dir=code
 
 RUN apk update
-RUN apk -y add bash curl
+RUN apk add bash curl
 
-# RUN addgroup meteor
+RUN addgroup -S meteor
 
-# RUN useradd meteor -g meteor -m -s /bin/bash
+RUN adduser -S meteor -G meteor
 
-# USER meteor
+USER meteor
 
-# RUN curl https://install.meteor.com/ | sh 
+RUN curl https://install.meteor.com/ | /bin/bash 
 
 #RUN cp "/home/meteor/.meteor/packages/meteor-tool/1.7.0_5/mt-os.linux.x86_64/scripts/admin/launch-meteor" /usr/bin/meteor
 
