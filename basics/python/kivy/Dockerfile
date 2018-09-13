@@ -40,5 +40,5 @@ ADD . .
 ENTRYPOINT ["/bin/bash"]
 
 
-# (host)$ xhost+local:docker
+# (host)$ xhost +local:docker
 # (host)$ docker run --rm -it -v /run/user/1000:/run/user/1000 -v $"(pwd)"/:/code -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc=host --shm-size=1024m --net=host -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=/run/user/1000 
