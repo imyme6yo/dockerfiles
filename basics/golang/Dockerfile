@@ -15,12 +15,14 @@ RUN apk update && apk upgrade && apk add --no-cache git
 RUN mkdir /$dir
 WORKDIR /$dir
 ADD . .
-VOLUME /$dir 
+
+# docker run --rm -it -v "$(pwd)"/:/dir image_id -p 8808:8808
+# VOLUME /$dir 
 
 # upgrade 
 # RUN go get -d -v ./...
 # RUN go install -v ./...
 
-EXPOSE 10040
+# EXPOSE 10040
 
 ENTRYPOINT ["/bin/ash"]
