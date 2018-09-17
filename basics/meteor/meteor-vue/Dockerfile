@@ -7,9 +7,11 @@ ARG dir=code
 RUN apt-get update
 RUN apt-get -y install curl git
 
-RUN addgroup meteor
+RUN groupadd meteor
 
-RUN useradd meteor -g meteor -m -s /bin/bash
+RUN useradd -m  -d /home/meteor meteor -g meteor
+
+RUN chown meteor:meteor /home/meteor
 
 USER meteor
 
@@ -17,16 +19,12 @@ RUN curl https://install.meteor.com/ | sh
 
 #RUN cp "/home/meteor/.meteor/packages/meteor-tool/1.7.0_5/mt-os.linux.x86_64/scripts/admin/launch-meteor" /usr/bin/meteor
 
-RUN export PATH=$PATH:~/.meteor
-
-RUN mkdir /home/meteor/$dir
-WORKDIR /home/meteor/$dir
+ENV PATH "$PATH:~/.meteor"
+RUN echo $PATH
 
 RUN git clone https://github.com/meteor-vue/vue-meteor.git $dir
+WORKDIR /home/meteor/$dir
 
-ADD . .
-
-WORKDIR /home/meteor/$dir/$dir
 RUN ln -s ../$dir/packages packages
 RUN meteor npm install
 
