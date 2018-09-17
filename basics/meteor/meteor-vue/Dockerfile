@@ -19,8 +19,10 @@ RUN curl https://install.meteor.com/ | sh
 
 #RUN cp "/home/meteor/.meteor/packages/meteor-tool/1.7.0_5/mt-os.linux.x86_64/scripts/admin/launch-meteor" /usr/bin/meteor
 
-ENV PATH "$PATH:~/.meteor"
+ENV PATH "$PATH:home/meteor/.meteor"
 RUN echo $PATH
+
+WORKDIR /home/meteor
 
 RUN git clone https://github.com/meteor-vue/vue-meteor.git $dir
 WORKDIR /home/meteor/$dir
