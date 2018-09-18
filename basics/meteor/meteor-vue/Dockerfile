@@ -24,9 +24,10 @@ RUN echo $PATH
 
 WORKDIR /home/meteor
 
-RUN git clone https://github.com/meteor-vue/vue-meteor.git $dir
+RUN git clone https://github.com/meteor-vue/vue-meteor.git
+RUN git clone https://github.com/meteor-vue/vue-meteor-demo.git $dir
 WORKDIR /home/meteor/$dir
 
-RUN ln -s ../$dir/packages packages
+RUN ln -s ../vue-meteor/packages packages
 RUN meteor npm install
 
