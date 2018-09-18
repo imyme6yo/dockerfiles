@@ -19,7 +19,7 @@ RUN curl https://install.meteor.com/ | sh
 
 #RUN cp "/home/meteor/.meteor/packages/meteor-tool/1.7.0_5/mt-os.linux.x86_64/scripts/admin/launch-meteor" /usr/bin/meteor
 
-ENV PATH "$PATH:home/meteor/.meteor"
+ENV PATH "$PATH:/home/meteor/.meteor"
 RUN echo $PATH
 
 WORKDIR /home/meteor
