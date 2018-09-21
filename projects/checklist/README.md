@@ -1,4 +1,6 @@
 checklist made by vue and native?
 
-no server app
+no server app 
+	with websocket
+	with firebase
 
