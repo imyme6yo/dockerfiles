@@ -15,6 +15,7 @@ ARG REQUIREMENT=requirements.text
 # MAINTAINER
 MAINTAINER jon "imyme6yo@gmail.com"
 
+
 # PACKAGE UPGRADE
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y apt-utils
