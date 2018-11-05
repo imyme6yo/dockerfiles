@@ -17,12 +17,11 @@ ARG DIR=code
 MAINTAINER jon "imyme6yo@gmail.com"
 
 #INSTALL IONIC
-RUN npm install -g ionic
+RUN npm install -g nativescript
 
 # COPY PROJECT FILES
 RUN mkdir /$DIR
 WORKDIR /$DIR
-ADD . /$DIR
 
 RUN npm install
 

@@ -22,9 +22,6 @@ RUN npm install -g ionic
 # COPY PROJECT FILES
 RUN mkdir /$DIR
 WORKDIR /$DIR
-ADD . /$DIR
-
-RUN npm install
 
 # docker run --rm -it -v "$(pwd)"/:/code 127f87f3b03b
 VOLUME /$dir 
