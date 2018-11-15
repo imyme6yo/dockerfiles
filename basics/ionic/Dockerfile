@@ -11,7 +11,7 @@ ARG VER=8.12.0
 FROM node:$VER-alpine
 
 # ARGUMENTS OF CONTAINER
-ARG DIR=likepub
+ARG DIR=code
 
 # MAINTAINER
 MAINTAINER jon "imyme6yo@gmail.com"
