@@ -11,7 +11,7 @@ ARG VER=8.12.0
 FROM node:$VER-alpine
 
 # ARGUMENTS OF CONTAINER
-ARG DIR=code
+ARG DIR=likepub
 
 # MAINTAINER
 MAINTAINER jon "imyme6yo@gmail.com"
@@ -19,18 +19,13 @@ MAINTAINER jon "imyme6yo@gmail.com"
 #INSTALL IONIC
 RUN npm install -g ionic
 
-# COPY PROJECT FILES
-RUN mkdir /$DIR
-WORKDIR /$DIR
-ADD . /$DIR
+# COPY PROJECT FILES blank/tabs/sidemenu/blank/super/tutorial
+RUN ionic start /${DIR} blank
 
-RUN npm install
+#RUN npm install
 
-# docker run --rm -it -v "$(pwd)"/:/code 127f87f3b03b
-VOLUME /$dir 
-
-# requirements.txt
-# RUN pip$VER install -r $REQUIREMENT
+# docker run --rm -it -v "$(pwd)"/:/likepub likepub:test
+VOLUME /${DIR}
 
 EXPOSE 9119
 
