@@ -1,0 +1,21 @@
+// start with template
+
+$vue init nuxt-community/starter-template <project-name>
+
+$cd <project-name>
+$npm install
+
+// start from nothing
+
+create package.json
+{
+  "name": <project-name>,
+  "scripts": {
+    "dev": "nuxt"
+  }
+}
+
+// add nuxt to project
+npm install --save nuxt
+
+
