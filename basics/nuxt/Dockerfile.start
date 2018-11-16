@@ -26,6 +26,9 @@ WORKDIR /$DIR
 # requirements.txt
 # RUN pip$VER install -r $REQUIREMENT
 
+ENV HOST 0.0.0.0
+#ENV PORT 9119
+
 EXPOSE 9119
 
 ENTRYPOINT ["/bin/ash"]

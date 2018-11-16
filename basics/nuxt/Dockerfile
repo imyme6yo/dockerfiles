@@ -22,10 +22,15 @@ RUN mkdir /$DIR
 WORKDIR /$DIR
 ADD . /$DIR
 
+RUN npm install
+
 # docker run --rm -it -v "$(pwd)"/:/code 127f87f3b03b
 
 # requirements.txt
 # RUN pip$VER install -r $REQUIREMENT
+
+ENV HOST 0.0.0.0
+# ENV POST 9119
 
 EXPOSE 9119
 
