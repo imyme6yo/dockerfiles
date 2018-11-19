@@ -17,7 +17,8 @@ ARG DIR=code
 MAINTAINER jon "imyme6yo@gmail.com"
 
 #INSTALL IONIC
-RUN npm install -g nativescript
+RUN npm install -g --unsafe-perm nativescript
+#RUN npm install -g @vue/cli @vue/cli-init
 
 # COPY PROJECT FILES
 RUN mkdir /$DIR
