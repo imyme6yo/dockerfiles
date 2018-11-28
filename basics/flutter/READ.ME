@@ -1,0 +1,50 @@
+Goals)
+a) make a flutter docker image for android apps
+	i ) base on Ubuntu
+	ii) base on alpine
+
+b) make dockerfile and playbook for making docker container
+
+
+
+a) Making a flutter docker image for android apps
+
+Operating System Linux 64bit
+
+reference: https://flutter.io/docs/get-started/install/linux
+
+make project folder
+
+apt-get install git curl unzip xz-utils
+apt-get install lib32stdc++6 
+(flutter deps)
+apt-get install openjdk-8-jdk
+
+curl -O https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.11.10-beta.tar.xz
+
+tar xz flutter_linux_v0.11.10-beta.tar.xz
+
+export PATH=$PATH:`pwd`/flutter/bin
+
+flutter doctor -v ( See the what is needed for the project )
+
+
+Anroid Toolchain
+
+download sdk cli
+set path
+install sdk
+create avd
+
+curl -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+(you can download sdk-tools from https://developer.android/com)
+
+unzip sdk-tools-linux-4333796.zip -d android-sdk
+
+cd anroid-sdk/tools/bin
+
+./sdkmanager --update
+
+set PATHs
+
+
