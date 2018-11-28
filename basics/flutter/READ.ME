@@ -15,18 +15,34 @@ reference: https://flutter.io/docs/get-started/install/linux
 
 make project folder
 
-apt-get install git curl unzip xz-utils
-apt-get install lib32stdc++6 
+# apt-get install git curl unzip xz-utils
+# apt-get install lib32stdc++6 
 (flutter deps)
-apt-get install openjdk-8-jdk
+# apt-get install openjdk-8-jdk
 
-curl -O https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.11.10-beta.tar.xz
+# update-alternatives -config java
+(to see java paths)
+--------------------------------------------
+# echo $JAVA_HOME
+# javac -version (check if java is installed)
+# which javac
+/usr/bin/javac
+# readlink -f /usr/bin/javac
+/usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
-tar xz flutter_linux_v0.11.10-beta.tar.xz
 
-export PATH=$PATH:`pwd`/flutter/bin
+--------------------------------------------
 
-flutter doctor -v ( See the what is needed for the project )
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/bin
+
+# curl -O https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.11.10-beta.tar.xz
+
+# tar xz flutter_linux_v0.11.10-beta.tar.xz
+
+# export PATH=$PATH:`pwd`/flutter/bin
+
+# flutter doctor -v ( See the what is needed for the project )
 
 
 Anroid Toolchain
@@ -36,15 +52,15 @@ set path
 install sdk
 create avd
 
-curl -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+# curl -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 (you can download sdk-tools from https://developer.android/com)
 
-unzip sdk-tools-linux-4333796.zip -d android-sdk
+# unzip sdk-tools-linux-4333796.zip -d android-sdk
 
-cd anroid-sdk/tools/bin
+# cd anroid-sdk/tools/bin
 
-./sdkmanager --update
-
+# ./sdkmanager --update
+# ./sdkmanager "system-images;android-26;default;x86_64"
 set PATHs
 
 
