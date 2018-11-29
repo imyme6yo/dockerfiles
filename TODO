@@ -1,0 +1,69 @@
+1. PROCESS
+
+	1) make docker image with ubuntu
+	
+		a) verify operation:
+			i  ) web
+			ii ) android
+			iii) ios
+	
+		b) minimalize image size
+	
+	2) push image to dockerhub
+
+	3) make files
+
+		a) dockerfile
+		b) ansible playbooks
+		c) docker-compose.yml
+
+			i  ) database
+			ii ) cache, message queue
+
+	4) write guides
+
+		a) for new projects
+		b) for existing projects
+
+	5) back at once for alpine
+
+
+2. TARGES
+PWA
+golang
+	echo
+	gorm
+
+cache
+	redis
+
+database
+	postgre
+	mongodb
+
+tensorflow
+keras
+android
+ios
+nginx
+kali
+express
+flask
+jenkins
+wireshark
+firebase
+ns3
+** for testing
+streaming
+html5 game engine
+	contruct 2
+	BabylonJS
+	pixi.js
+
+static hosting 
+microplatform
+
+
+socketio
+deepstream.io
+	deepstreamhub.com

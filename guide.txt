@@ -1,36 +1,25 @@
+1. push docker image to dockerhub
 
-push docker images
+    1) make image tag
 
-1) make image tag
 # docker image tag REPOSITORY:TAG DOCKER_HUB_USERNAME/REPOSITORYNAME:TAG
+
+    2) push image to docker hub
+
 # docker image push DOCKER_HUB_USERNAME/REPOSITORYNAME:TAG
 
+2. run a GUI on docker container
 
-
-INSTALLING DOCKER
-
-iOS
-
-LINUX/UNIX
-
-UBUNTU
-
-WINDOWS
-
-
-RUNNING CONTAINER WITH GUI
-
-iOS
-
-LINUX/UNIX
-
-UBUNTU
+    1) ubuntu
 
 (host)$ xhost +local:root
-(host)$ docker run --rm -it -v /run/user/1000:/run/user/1000 -v "$(pwd)"/:/code -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc=host --shm-size=1024m --net=host -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=/run/user/1000 
+(host)$ docker run --rm -it -v /run/user/1000:/run/user/1000 -v "$(pwd)"/:/code -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc=host --shm-size=1024m --net=host -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=/run/user/1000 DOCKER_IMAGE
 
-WINDOWS
+    2) windows
 
+???
+
+    3) macOS
 
 REFERENCES
 
