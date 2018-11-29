@@ -34,11 +34,11 @@ make project folder
 
 --------------------------------------------
 
-# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/bin
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # curl -O https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.11.10-beta.tar.xz
 
-# tar xz flutter_linux_v0.11.10-beta.tar.xz
+# tar xf flutter_linux_v0.11.10-beta.tar.xz
 
 # export PATH=$PATH:`pwd`/flutter/bin
 
@@ -59,8 +59,22 @@ create avd
 
 # cd anroid-sdk/tools/bin
 
-# ./sdkmanager --update
-# ./sdkmanager "system-images;android-26;default;x86_64"
 set PATHs
+
+# export ANDROID_SDK_ROOT=/flutter/android-sdk
+# export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+# export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+# export ANRDOID_HOME
+
+
+# sdkmanager --update
+# sdkmanager "system-images;android-26;default;x86_64"
+# sdkmanager licenses
+
+# avdmanager create avd -n test -k "system-images;android-26;default;x86_64"
+
+# 
+
 
 
