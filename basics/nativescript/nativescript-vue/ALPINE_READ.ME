@@ -1,0 +1,40 @@
+Goals)
+a) make a flutter docker image for android apps
+        i ) base on Ubuntu
+        ii) base on alpine
+
+b) make dockerfile and playbook for making docker container
+
+
+
+a) Making a flutter docker image for android apps
+
+
+from  node:alpine
+
+install packages
+
+install java-sdk
+# apk add --update opensdk8
+# echo $JAVA_HOME
+# export PATH=$PATH:/usr/lib/jvm/java-1.8-openjdk/bin
+# export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+
+
+
+
+
+install vue-nativescript cli
+
+# npm install -g nativescript
+# npm install -g @vue/cli @vue/cli-init
+
+create project
+# vue init nativescript-vue/vue-cli-template test
+# cd test
+
+# npm install 
+
+# tns run android --bundle
+
+

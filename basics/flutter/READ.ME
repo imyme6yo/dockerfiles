@@ -13,12 +13,20 @@ Operating System Linux 64bit
 
 reference: https://flutter.io/docs/get-started/install/linux
 
-make project folder
+before run container 
 
-# apt-get install git curl unzip xz-utils
+(host)$ xhost +local:docker
+(host)$ docker run --rm -it -v /run/user/1000:/run/user/1000 -v "$(pwd)"/:/code -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc=host --shm-size=1024m --net=host -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=/run/user/1000 [IMAGE_TAG|HASH]
+
+make project folder
+# apt-get update
+# apt-get install vim git curl unzip xz-utils
 # apt-get install lib32stdc++6 
 (flutter deps)
 # apt-get install openjdk-8-jdk
+
+DEPS for ANDROID STUDIO
+# apt-get update && apt-get install lib32z1 lib32ncurses5 libbz2-1.0:i386 lib32stdc++6
 
 # update-alternatives -config java
 (to see java paths)
@@ -47,34 +55,21 @@ make project folder
 
 Anroid Toolchain
 
-download sdk cli
-set path
+insatall android studio
+(https://developer.android.com/studio/install?hl=ko)
+
+execute android studio setup wizard
+
+# flutter doctor -v
+
+# curl -O https://dl.google.com/dl/android/studio/ide-zips/3.2.0.26/android-studio-ide-181.5014246-linux.zip
+
+# unzip android-studio-ide-181.5014246-linux.zip -d /usr/local
+# export PATH=$PATH:/usr/local/android-studio/bin
+
+# studio.sh
 install sdk
-create avd
-
-# curl -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-(you can download sdk-tools from https://developer.android/com)
-
-# unzip sdk-tools-linux-4333796.zip -d android-sdk
-
-# cd anroid-sdk/tools/bin
-
-set PATHs
-
-# export ANDROID_SDK_ROOT=/flutter/android-sdk
-# export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
-# export PATH=$PATH:$ANDROID_SDK_ROOT/tools
-# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-# export ANRDOID_HOME
+add flutter plugin to android studio configure -> plugins -> browser plugins -> flutter install -> install dart ? yes!
 
 
-# sdkmanager --update
-# sdkmanager "system-images;android-26;default;x86_64"
-# sdkmanager licenses
-
-# avdmanager create avd -n test -k "system-images;android-26;default;x86_64"
-
-# 
-
-
-
+# flutter doctor --android-licenses

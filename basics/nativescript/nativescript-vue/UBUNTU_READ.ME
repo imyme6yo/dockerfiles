@@ -1,0 +1,42 @@
+from start ubuntu:16.04
+
+install packages
+# apt-get update
+# apt-get install vim git curl unzip
+# apt-get install openjdk-8-jdk
+
+# update-alternatives --config java
+
+--------------------------------------------
+# echo $JAVA_HOME
+# javac -version (check if java is installed)
+# which javac
+/usr/bin/javac
+# readlink -f /usr/bin/javac
+/usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+
+--------------------------------------------
+
+# curl -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+(you can download sdk-tools from https://developer.android/com)
+
+# unzip sdk-tools-linux-4333796.zip -d android-sdk
+
+set PATHs
+
+# export ANDROID_SDK_ROOT=/flutter/android-sdk
+# export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+# export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+# export ANRDOID_HOME=$ANDROID_SDK_ROOT
+
+# sdkmanager --list 
+# sdkmanager "platform-tools" "platforms" "platforms:android-26" "system..."
+# sdkmanager --licenses
+# avdmanager create avd -n test -k "
+
+
+# npm install -g nativescript 
+# npm install -g @vue/cli @vue/cli-init

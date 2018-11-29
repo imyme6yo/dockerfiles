@@ -1,3 +1,12 @@
+
+push docker images
+
+1) make image tag
+# docker image tag REPOSITORY:TAG DOCKER_HUB_USERNAME/REPOSITORYNAME:TAG
+# docker image push DOCKER_HUB_USERNAME/REPOSITORYNAME:TAG
+
+
+
 INSTALLING DOCKER
 
 iOS
