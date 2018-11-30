@@ -2,7 +2,6 @@ from start ubuntu:16.04
 
 install packages
 # apt-get update
-# apt-get install vim git curl unzip
 # apt-get install openjdk-8-jdk
 
 # update-alternatives --config java
@@ -19,23 +18,26 @@ install packages
 
 --------------------------------------------
 
-# curl -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+(host)# curl -O https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 (you can download sdk-tools from https://developer.android/com)
 
-# unzip sdk-tools-linux-4333796.zip -d android-sdk
+(host)# unzip sdk-tools-linux-4333796.zip -d sdk
+COPY sdk to container /root/Android/
 
 set PATHs
 
-# export ANDROID_SDK_ROOT=/flutter/android-sdk
+# export ANDROID_SDK_ROOT=~/Android/sdk
 # export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 # export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 # export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 # export ANRDOID_HOME=$ANDROID_SDK_ROOT
 
+# sdkmanager --update
 # sdkmanager --list 
-# sdkmanager "platform-tools" "platforms" "platforms:android-26" "system..."
+# sdkmanager "build-tools;28.0.3" "platform-tools" "tools"
+
 # sdkmanager --licenses
-# avdmanager create avd -n test -k "
+# avdmanager create avd -n test -k "system-images;android-28;google_apis;x86_64"
 
 
 # npm install -g nativescript 

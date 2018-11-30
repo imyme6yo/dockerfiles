@@ -1,8 +1,8 @@
 1. push docker image to dockerhub
 
-    1) make image tag
+    1) make image from container changes
 
-# docker image tag REPOSITORY:TAG DOCKER_HUB_USERNAME/REPOSITORYNAME:TAG
+# docker commit [CONTAINER_NAME|CONTAINER_ID] DOCKER_HUB_USERNAME/REPOSITORYNAME:TAG
 
     2) push image to docker hub
 
