@@ -2,6 +2,7 @@ from start ubuntu:16.04
 
 install packages
 # apt-get update
+# apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6 g++
 # apt-get install openjdk-8-jdk
 
 # update-alternatives --config java
@@ -34,10 +35,9 @@ set PATHs
 
 # sdkmanager --update
 # sdkmanager --list 
-# sdkmanager "build-tools;28.0.3" "platform-tools" "tools"
-
+# sdkmanager "tools" "emulator" "platform-tools" "platforms;android-28" "build-tools;28.0.3" "extras;android;m2repository" "extras;google;m2repository"
 # sdkmanager --licenses
-# avdmanager create avd -n test -k "system-images;android-28;google_apis;x86_64"
+# avdmanager create avd -n test -k "system-images;android-28;google_apis;x86_64" -d "Nexus 6P"
 
 
 # npm install -g nativescript 

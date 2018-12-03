@@ -28,42 +28,105 @@
 	5) back at once for alpine
 
 
-2. TARGES
-PWA
-golang
-	echo
-	gorm
+2. SUBJECTS
 
-cache
-	redis
+	1) Languages
+		c/c++
+		java
+		c#
+		typescript
+		dart
+		assembly
+		golang
+		powerscript
+		shell script
+	
+		** Data Structures, Design Patter, Algorithms
+		** concurrency, cryptography, gui, event loop, async
 
-database
-	postgre
-	mongodb
+	2) Data Structures
+		Tree
+		Graph
+		Queue
+		Stack
+		Hash
 
-tensorflow
-keras
-android
-ios
-nginx
-kali
-express
-flask
-jenkins
-wireshark
-firebase
-ns3
-** for testing
-streaming
-html5 game engine
-	contruct 2
-	BabylonJS
-	pixi.js
+	3) Algorithms
 
-static hosting 
-microplatform
+	4) Design Patter
 
 
-socketio
-deepstream.io
-	deepstreamhub.com
+	5) Library / Frameworks
+		NodeJS
+		EXPRESS.io
+		rxjs
+		NS3
+		ionic
+		flutter
+		flask
+		nativescript
+		django
+		angular
+		kivy
+		echo
+		gorm
+		spring
+		hibernate
+		deepstream.io
+
+		** Native: Android, iOS
+
+		** REST, HTTP, graphQL, socket.io, microservices
+		** PWA, Mobile App, GUI App, Web App
+		** concurrency, cryptography
+
+	6) Server Tech Stacks
+		AWS
+		firebase
+		nginx
+		docker
+		dockerswarm
+		jenkins
+		git
+		ansible
+
+		postgre
+		mongdb
+		RabbitMQ
+		redis
+		sqlalchemy
+
+	7) Data
+		tensorflow
+		kafka
+		wireshark
+		kali linux
+		google chart
+		keras
+		crawling
+
+	8) Software Quality
+		log4j
+		logstash
+		bugzilla
+
+		agile test
+		unittest
+		selenium
+		Wireless Security
+
+	9) Specifications
+		CI+, LTE, WIFI, Bluetooth
+	
+	10) Game
+		contruct 2
+		BabylonJS
+		pixi.js
+
+
+	11) ETC
+		Excel
+		google spreadsheet
+		adobe photoshop
+		vscode
+		workbench
