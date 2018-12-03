@@ -63,10 +63,12 @@
 		NS3
 		ionic
 		flutter
+		vue
 		flask
 		nativescript
 		django
 		angular
+		meteor
 		kivy
 		echo
 		gorm
@@ -76,9 +78,16 @@
 
 		** Native: Android, iOS
 
-		** REST, HTTP, graphQL, socket.io, microservices
+		** REST, HTTP, graphQL, socket.io, microservices, media stream
 		** PWA, Mobile App, GUI App, Web App
 		** concurrency, cryptography
+
+		** sanic, micropython, serpentAI, Mechanical Soup, Maya, Fsociety, Audacity, DeepSpeech, Zulip, rebound, Mask R-CNN, face_recognition, detetron, tornado, zeronet
+		** mailpile (mail client), cookiecutter, pattern(https://github.com/clips/pattern), dash(python, visualization, https://github.com/plotly/dash), mopidy(music streaming, https://github.com/mopidy/mopidy)
+		** 
+
+
+
 
 	6) Server Tech Stacks
 		AWS
@@ -102,18 +111,24 @@
 		wireshark
 		kali linux
 		google chart
+		networkX
 		keras
 		crawling
+		pytorch
 
 	8) Software Quality
 		log4j
 		logstash
 		bugzilla
 
+		penetrate Testing
+
 		agile test
 		unittest
 		selenium
 		Wireless Security
+		haven (https://github.com/guardianproject/haven)
+
 
 	9) Specifications
 		CI+, LTE, WIFI, Bluetooth
@@ -124,9 +139,18 @@
 		pixi.js
 
 
-	11) ETC
+	11) Opensource projects
+		
+
+	12) ETC
 		Excel
 		google spreadsheet
 		adobe photoshop
 		vscode
 		workbench
+		vim
+		sphinx
+
+		marlin firmware (https://github.com/MarlinFirmware)
+
+** IoT, VR, Robots, Sports Tracking, GPGPU,
