@@ -1,0 +1,25 @@
+# @DATE: 20190115
+# @AUTHOR: jon "imyme6yo@gmail.com"
+
+ARG VERSION=3.7.2
+
+FROM python:${VERSION}-stretch
+
+LABEL maintainer "imyme6yo@gmail.com"
+
+ARG DIRNAME=code
+ARG PACKAGES=requirements.txt
+
+RUN apt-get update && apt-get update
+RUN python -m pip install pip --upgrade
+
+RUN mkdir ${DIRNAME}
+ADD . ${DIRNAME}
+WORKDIR ${DIRNAME}
+
+RUN pip install -r $PACKAGES
+
+#MAKING CONTAINER 
+# # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIRNAME=$(echo "${PWD##*/}") .
+#RUNNING CONTAINER
+# # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev bash
