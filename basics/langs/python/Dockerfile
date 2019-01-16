@@ -1,34 +1,25 @@
-# ARGUMENT OF VERSION
-# DATE: 20180912
-ARG VER=3.7
+# @DATE: 20190115
+# @AUTHOR: jon "imyme6yo@gmail.com"
 
-FROM python:$VER-alpine3.7
+ARG VERSION=3.7.2
 
-# ARGUMENTS OF CONTAINER
-# ARG VER=3.7
-ARG DIR=code
-ARG REQUIREMENT=requirements.text
+FROM python:${VERSION}-alpine3.7
 
-# MAINTAINER
-MAINTAINER jon "imyme6yo@gmail.com"
+LABEL maintainer "imyme6yo@gmail.com"
 
-# INSTALL PACKAGES
-RUN apk update && apk upgrade
+ARG DIRNAME=project_code
+ARG PACKAGES=requirements.txt
 
-# UPGRADE PIP
-RUN python$VER -m pip install pip --upgrade 
+RUN apk update && apk update
+RUN python -m pip install pip --upgrade
 
-# COPY PROJECT FILES
-RUN mkdir /$DIR
-WORKDIR /$DIR
-ADD . /$DIR
+RUN mkdir ${DIRNAME}
+ADD . ${DIRNAME}
+WORKDIR ${DIRNAME}
 
-# docker run --rm -it -v "$(pwd)"/:/code 127f87f3b03b
-VOLUME /$dir 
+#RUN pip install -r $PACKAGES
 
-# requirements.txt
-# RUN pip$VER install -r $REQUIREMENT
-
-EXPOSE 9119
-
-ENTRYPOINT ["/bin/ash"]
+#MAKING CONTAINER 
+# # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIRNAME=$(echo "${PWD##*/}") .
+#RUNNING CONTAINER
+# # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev ash

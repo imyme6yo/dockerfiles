@@ -78,7 +78,7 @@
 
 		** Native: Android, iOS
 
-		** REST, HTTP, graphQL, socket.io, microservices, media stream
+		** REST, HTTP, graphQL, grpc, prisma, socket.io, microservices, media stream
 		** PWA, Mobile App, GUI App, Web App
 		** concurrency, cryptography
 
