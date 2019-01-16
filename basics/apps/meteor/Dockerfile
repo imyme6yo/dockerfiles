@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER jon "imyme6yo@gmail.com"
+LABEL maintainer "imyme6yo@gmail.com"
 
 ARG dir=code
 
