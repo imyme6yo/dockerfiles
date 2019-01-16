@@ -8,6 +8,11 @@ LABEL maintainer "imyme6yo@gmail"
 
 ARG DIRNAME=project_code
 
-RUN flutter create ${DIRNAME}
+# RUN flutter create ${DIRNAME}
+
+RUN mkdir ${DIRNAME}
+ADD . ${DIRNAME}
+WORKDIR ${DIRNAME}
 
 WORKDIR ${DIRNAME}
+

@@ -1,32 +1,34 @@
-# ARGUMENT OF VERSION
-# DATE: 20180921
+# @AUTHOR: jon "imyme6yo@gmail.com"
+# @DATE: 20180921
 # ARGUMENTS OF IMAGES
+
 # LTS 8.12.0
 # CURRENT 10.11.0
-ARG VER=8.12.0
-# ARG VER=10.11.0
 
-FROM node:$VER-alpine
+ARG VERSION=8.12.0
+# ARG VERSION=10.11.0
 
-# ARGUMENTS OF CONTAINER
-ARG DIR=code
+FROM node:${VERSION}-alpine
 
 # MAINTAINER
-MAINTAINER jon "imyme6yo@gmail.com"
+LABEL maintainer "imyme6yo@gmail.com"
+
+# ARGUMENTS OF CONTAINER
+ARG DIR_NAME=code
+ARG PROJECT_NAME=code
+
+#INSTALL IONIC
+RUN npm install -g ionic
 
 # COPY PROJECT FILES
-RUN mkdir /$DIR
-WORKDIR /$DIR
-ADD . /$DIR
+RUN mkdir ${DIR_NAME}
+WORKDIR ${DIR_NAME}
+ADD . ${DIR_NAME}
+WORKDIR ${DIR_NAME}/${PROJECT_NAME}
 
 RUN npm install
 
-# docker run --rm -it -v "$(pwd)"/:/code 127f87f3b03b
-VOLUME /$dir 
-
-# requirements.txt
-# RUN pip$VER install -r $REQUIREMENT
-
-EXPOSE 9119
-
-ENTRYPOINT ["/bin/ash"]
+#MAKING CONTAINER 
+# # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIRNAME=$(echo "${PWD##*/}") .
+#RUNNING CONTAINER
+# # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev ash

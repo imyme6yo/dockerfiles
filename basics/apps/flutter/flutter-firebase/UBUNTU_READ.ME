@@ -1,0 +1,68 @@
+Operating System Linux 64bit
+
+reference: https://flutter.io/docs/get-started/install/linux
+
+before run container 
+
+(host)$ xhost +local:docker
+(host)$ docker run --rm -it -v /run/user/1000:/run/user/1000 -v "$(pwd)"/:/code -v /tmp/.X11-unix:/tmp/.X11-unix:ro --privileged --ipc=host --shm-size=1024m --net=host -e DISPLAY=$DISPLAY -e XDG_RUNTIME_DIR=/run/user/1000 [IMAGE_TAG|HASH]
+
+make project folder
+# apt-get update
+# apt-get install git lib32stdc++6 
+(flutter deps)
+
+DEPS for ANDROID STUDIO
+(# dpkg  --add-architecture i386)
+# apt-get update && apt-get install lib32z1 lib32ncurses5 libbz2-1.0 lib32stdc++6
+(when error occured)# apt-get install libcanberra-gtk-module
+
+
+INSTALL JAVA
+# apt-get install openjdk-8-jdk
+
+# update-alternatives -config java
+(to see java paths)
+--------------------------------------------
+# echo $JAVA_HOME
+# javac -version (check if java is installed)
+# which javac
+/usr/bin/javac
+# readlink -f /usr/bin/javac
+/usr/lib/jvm/java-8-openjdk-amd64/bin/javac
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+
+--------------------------------------------
+
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+# curl -O https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_v0.11.10-beta.tar.xz
+
+# tar xf flutter_linux_v0.11.10-beta.tar.xz
+
+# export PATH=$PATH:`pwd`/flutter/bin
+
+# flutter doctor -v ( See the what is needed for the project )
+
+
+Anroid Toolchain
+
+insatall android studio
+(https://developer.android.com/studio/install?hl=ko)
+
+execute android studio setup wizard
+
+# flutter doctor -v
+
+# curl -O https://dl.google.com/dl/android/studio/ide-zips/3.2.0.26/android-studio-ide-181.5014246-linux.zip
+
+# unzip android-studio-ide-181.5014246-linux.zip -d /usr/local
+# export PATH=$PATH:/usr/local/android-studio/bin
+
+# studio.sh
+install sdk
+add flutter plugin to android studio configure -> plugins -> browser plugins -> flutter install -> install dart ? yes!
+
+
+# flutter doctor --android-licenses
