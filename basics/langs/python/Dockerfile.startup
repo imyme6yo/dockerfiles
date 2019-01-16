@@ -1,0 +1,25 @@
+# @DATE: 20190115
+# @AUTHOR: jon "imyme6yo@gmail.com"
+
+ARG VERSION=3.7.2
+
+FROM python:${VERSION}-alpine3.7
+
+LABEL maintainer "imyme6yo@gmail.com"
+
+ARG DIRNAME=code
+ARG PACKAGES=requirements.txt
+
+RUN apk update && apk update
+RUN python -m pip install pip --upgrade
+
+RUN mkdir ${DIRNAME}
+#ADD ${PACKAGES} ${DIRNAME}
+WORKDIR ${DIRNAME}
+
+#RUN pip install -r $PACKAGES
+
+#MAKING CONTAINER 
+# # docker build -t python:$(echo "${PWD##*/}") --build-arg DIRNAME=$(echo "${PWD##*/}") .
+#RUNNING CONTAINER
+# # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") python:$(echo "${PWD##*/}") ash
