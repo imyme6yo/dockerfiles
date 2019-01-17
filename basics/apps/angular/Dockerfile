@@ -1,19 +1,17 @@
-# @AUTHOR: jon "imyme6yo@gmail.com"
-# @DATE: 20190115
-# ARGUMENTS OF IMAGES
+# Dockerfile for angular project
+# AUTHOR: jon "imyme6yo@gmail.com"
+# CREATE_DATE: 20190115
 
-# LTS 8.12.0
-# CURRENT 10.11.0
+# CONTAINER ARGUMENTS
+ARG VERSION=8.12
+ARG TAG=${VERSION}-alpine
 
-ARG VERSION=8.12.0
-# ARG VERSION=10.11.0
-
-FROM node:${VERSION}-alpine
+FROM node:${TAG}
 
 # MAINTAINER
 LABEL maintainer "imyme6yo@gmail.com"
 
-# ARGUMENTS OF CONTAINER
+# PROJECTS ARGUMENTS
 ARG DIR_NAME=code
 ARG PROJECT_NAME=code
 

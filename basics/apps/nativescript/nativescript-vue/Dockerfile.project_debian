@@ -1,9 +1,9 @@
-# Dockerfile for nativescript project
+# Dockerfile for nativescript-vue project
 # AUTHOR: jon "imyme6yo@gmail.com"
 # CREATE DATE: 20190117
 # UPDATE DATE: 20190117
 
-# ARGUEMNTS FOR CONTAINER
+# ARGUMENTS FOR CONTAINER
 ARG VERSION=5.1
 ARG TAG=${VERSION}-node10.6-stretch
 
@@ -12,12 +12,19 @@ FROM imyme6yo/nativescript:${TAG}
 # MAINTAINER
 LABEL maintainer "imyme6yo@gmail.com"
 
-# ARGUMENTS FOR PROJECT
+# ARGUMENTS OF PROJECT
 ARG DIR_NAME=code
 ARG PROJECT_NAME=project
+
+#INSTALL NATIVESCRIPT
+#RUN npm install -g --unsafe-perm nativescript
+RUN npm install -g @vue/cli @vue/cli-init
 
 # COPY PROJECT FILES
 RUN mkdir ${DIR_NAME}
 ADD . ${DIR_NAME}
 WORKDIR ${DIR_NAME}/${PROJECT_NAME}
 RUN npm install
+
+
+
