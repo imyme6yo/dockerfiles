@@ -5,7 +5,7 @@
 
 # ARGUEMNTS FOR CONTAINER
 ARG VERSION=5.1
-ARG TAG=${VERSION}-node10.6-stretch
+ARG TAG=${VERSION}-node11`0.6-stretch
 
 FROM imyme6yo/nativescript:${TAG}
 
