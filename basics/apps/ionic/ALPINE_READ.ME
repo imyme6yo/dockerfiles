@@ -1,0 +1,51 @@
+https://github.com/johnhearn/alpine-android-fastlane/blob/master/Dockerfile
+
+Dockerfile
+
+FROM node:8.15.0-alpine
+
+ENV LANG C.UTF-8
+
+# add a simple script that can auto-detect the appropriate JAVA_HOME value
+# based on whether the JDK or only the JRE is installed
+RUN { \
+		echo '#!/bin/sh'; \
+		echo 'set -e'; \
+		echo; \
+		echo 'dirname "$(dirname "$(readlink -f "$(which javac || which java)")")"'; \
+	} > /usr/local/bin/docker-java-home \
+	&& chmod +x /usr/local/bin/docker-java-home
+ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
+ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+ENV ANDROID_SDK_ROOT /usr/local/android-sdk
+ENV PATH $PATH:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/build-tools
+
+ENV JAVA_VERSION 8u191
+ENV JAVA_ALPINE_VERSION 8.191.12-r0
+
+RUN set -x \
+	&& apk add --no-cache \
+		openjdk8="$JAVA_ALPINE_VERSION" \
+	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
+
+
+download sdk cli tools
+(host) $ unzip sdk-#########
+
+(host) $ docker cp tools [CONTAINER_ID]:/usr/local/android-sdk
+
+add PATH and ANDROID_SDK
+add path 
+
+(container) # vim ~/.profile
+write belows 
+
+export ANDROID_SDK_ROOT=/usr/local/android-sdk
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/build-tools
+
+(continaer) # source ~/.profile
+(container) # sdkmanager
+(container) # touch ~/.android/repositories.cfg
+
+(container) # yes | sdkmanager --verbose  "platforms;android-27" "build-tools;27.0.0" "extras;google;m2repository" "extras;android;m2repository"
+(container) # yes | sdkmanager --licenses
