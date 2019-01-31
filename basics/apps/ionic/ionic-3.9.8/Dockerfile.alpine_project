@@ -1,14 +1,14 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DATE: 20180921
+# @DATE: 20190131
 # ARGUMENTS OF IMAGES
 
-# LTS 8.12.0
-# CURRENT 10.11.0
-
-ARG VERSION=8.12.0
+ARG SDK_VERSION=26.1.1
+ARG NODE_VERSION=8.15.0
+ARG ALPINE_VERSION=3.8
+ARG TAG=imyme6yo/android-sdk:${SDK_VERSION}-node${NODE_VERSION}-alpine${ALPINE_VERSION}
 # ARG VERSION=10.11.0
 
-FROM node:${VERSION}-alpine
+FROM android-sdk:${TAG}
 
 # MAINTAINER
 LABEL maintainer "imyme6yo@gmail.com"
