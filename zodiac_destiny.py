@@ -17,8 +17,8 @@ target = host + '/src/data_z2.php'
 
 with open('zodiac_destiny.csv', 'w') as csv_file:
     csv_writer = csv.writer(csv_file)
-    for birth_day in range(1, 31):
-        for birth_year in range(1, 13):
+    for birth_year in range(1, 13):
+        for birth_day in range(1, 31):
             forms = {
                 'BirthYear': birth_year,
                 'BirthDay': birth_day,
