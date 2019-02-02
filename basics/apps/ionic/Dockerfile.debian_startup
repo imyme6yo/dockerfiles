@@ -1,14 +1,12 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
 # @DATE: 20190128
+
 # ARGUMENTS OF IMAGES
-
-# LTS 8.12.0
-# CURRENT 10.11.0
-
 ARG NODE_VERSION=11.8.0
 ARG ANDROID_STUDIO_VERSION=3.2.1
+ARG TAG=${ANDROID_STUDIO_VERSION}-node${NODE_VERSION}-stretch
 
-FROM imyme6yo/android-studio:${ANDROID_STUDIO_VERSION}-node${NODE_VERSION}-stretch
+FROM imyme6yo/android-studio:${TAG}
 
 # MAINTAINER
 LABEL maintainer "imyme6yo@gmail.com"
