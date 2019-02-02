@@ -17,7 +17,7 @@ LABEL maintainer "imyme6yo@gmail.com"
 ARG DIR_NAME=code
 ARG PROJECT_NAME=code
 # STARTER VALUES = { blank, tabs, sidemenu }
-ARG STARTER=blank
+# ARG STARTER=blank
 
 #ANDROID_SDK
 
@@ -27,15 +27,15 @@ RUN npm install -g ionic@3.9.8
 # COPY PROJECT FILES
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
-RUN ionic start ${PROJECT_NAME} ${STARTER}
-WORKDIR ${PROJECT_NAME}
+# RUN ionic start ${PROJECT_NAME} ${STARTER}
+# WORKDIR ${PROJECT_NAME}
 
 # INSTALL Node Modules
 # RUN npm install --save 
 # INSTALL Native Modeules
 # RUN ionic platform ..
 
-#MAKING CONTAINER 
+# MAKING IMAGE 
 # # docker build -t ionic:$(echo "${PWD##*/}") --build-arg DIRNAME=$(echo "${PWD##*/}") .
-#RUNNING CONTAINER
+# RUNNING CONTAINER
 # # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") ionic:$(echo "${PWD##*/}") ash

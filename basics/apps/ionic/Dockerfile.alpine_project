@@ -28,7 +28,7 @@ WORKDIR ${DIR_NAME}/${PROJECT_NAME}
 
 RUN npm install
 
-#MAKING CONTAINER 
+# MAKING IMAGE 
 # # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIRNAME=$(echo "${PWD##*/}") .
-#RUNNING CONTAINER
+# RUNNING CONTAINER
 # # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev ash
