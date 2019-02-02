@@ -26,7 +26,7 @@ RUN npm install -g ionic
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
 RUN no | ionic start ${PROJECT_NAME} ${STARTER}
-# WORKDIR ${PROJECT_NAME}
+WORKDIR ${PROJECT_NAME}
 
 # INSTALL Node Modules
 # RUN npm install --save 

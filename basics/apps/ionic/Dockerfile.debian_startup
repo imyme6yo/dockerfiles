@@ -25,7 +25,7 @@ RUN npm install -g ionic
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
 RUN no | ionic start ${PROJECT_NAME} ${STARTER}
-# WORKDIR ${PROJECT_NAME}
+WORKDIR ${PROJECT_NAME}
 
 # INSTALL Node Modules
 # RUN npm install --save 
@@ -33,6 +33,6 @@ RUN no | ionic start ${PROJECT_NAME} ${STARTER}
 # RUN ionic platform ..
 
 # MAKING IMAGE 
-# # docker build -t ionic:$(echo "${PWD##*/}") --build-arg DIRNAME=$(echo "${PWD##*/}") .
+# # docker build -t ionic:$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .
 # RUNNING CONTAINER
 # # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") ionic:$(echo "${PWD##*/}") ash
