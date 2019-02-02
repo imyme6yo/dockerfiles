@@ -16,6 +16,8 @@ LABEL maintainer "imyme6yo@gmail.com"
 # ARGUMENTS OF CONTAINER
 ARG DIR_NAME=code
 ARG PROJECT_NAME=code
+# STARTER VALUES = { blank, tabs, sidemenu }
+ARG STARTER=blank
 
 #ANDROID_SDK
 
@@ -25,7 +27,7 @@ RUN npm install -g ionic@3.9.8
 # COPY PROJECT FILES
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
-RUN ionic start ${PROJECT_NAME}
+RUN ionic start ${PROJECT_NAME} ${STARTER}
 WORKDIR ${PROJECT_NAME}
 
 # INSTALL Node Modules
