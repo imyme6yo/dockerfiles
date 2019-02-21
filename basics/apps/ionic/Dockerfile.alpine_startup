@@ -1,14 +1,14 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DATE: 20190131
+# @CREATE_DATE: 20190131
+# @UPDATE_DATE: 20190202
+
 # ARGUMENTS OF IMAGES
-
 ARG SDK_VERSION=26.1.1
-ARG NODE_VERSION=8.12.0
+ARG NODE_VERSION=11.8.0
 ARG ALPINE_VERSION=3.8
-ARG TAG=imyme6yo/android-sdk:${SDK_VERSION}-node${NODE_VERSION}-alpine${ALPINE_VERSION}
-# ARG VERSION=10.11.0
+ARG TAG=${SDK_VERSION}-node${NODE_VERSION}-alpine${ALPINE_VERSION}
 
-FROM android-sdk:${TAG}
+FROM imyme6yo/android-sdk:${TAG}
 
 # MAINTAINER
 LABEL maintainer "imyme6yo@gmail.com"
@@ -16,6 +16,8 @@ LABEL maintainer "imyme6yo@gmail.com"
 # ARGUMENTS OF CONTAINER
 ARG DIR_NAME=code
 ARG PROJECT_NAME=code
+# STARTER VALUES = { blank, tabs, sidemenu }
+ARG STARTER=blank
 
 #INSTALL IONIC
 RUN npm install -g ionic
@@ -23,7 +25,7 @@ RUN npm install -g ionic
 # COPY PROJECT FILES
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
-RUN ionic start ${PROJECT_NAME}
+RUN no | ionic start ${PROJECT_NAME} ${STARTER}
 WORKDIR ${PROJECT_NAME}
 
 # INSTALL Node Modules
@@ -31,7 +33,7 @@ WORKDIR ${PROJECT_NAME}
 # INSTALL Native Modeules
 # RUN ionic platform ..
 
-#MAKING CONTAINER 
-# # docker build -t ionic:$(echo "${PWD##*/}") --build-arg DIRNAME=$(echo "${PWD##*/}") .
-#RUNNING CONTAINER
+# MAKING IMAGE 
+# # docker build -t ionic:$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .
+# RUNNING CONTAINER
 # # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") ionic:$(echo "${PWD##*/}") ash

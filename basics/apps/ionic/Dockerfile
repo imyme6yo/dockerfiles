@@ -1,12 +1,12 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DATE: 20190131
-# ARGUMENTS OF IMAGES
+# @CREATE_DATE: 20190131
+# @UPDATE_DATE: 20190202
 
+# ARGUMENTS OF IMAGES
 ARG SDK_VERSION=26.1.1
-ARG NODE_VERSION=8.12.0
+ARG NODE_VERSION=8.15.0
 ARG ALPINE_VERSION=3.8
-ARG TAG=imyme6yo/android-sdk:${SDK_VERSION}-node${NODE_VERSION}-alpine${ALPINE_VERSION}
-# ARG VERSION=10.11.0
+ARG TAG=26.1.1-node${NODE_VERSION}-alpine${ALPINE_VERSION}
 
 FROM android-sdk:${TAG}
 
@@ -28,7 +28,7 @@ WORKDIR ${DIR_NAME}/${PROJECT_NAME}
 
 RUN npm install
 
-#MAKING CONTAINER 
+# MAKING IMAGE 
 # # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIRNAME=$(echo "${PWD##*/}") .
-#RUNNING CONTAINER
+# RUNNING CONTAINER
 # # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev ash
