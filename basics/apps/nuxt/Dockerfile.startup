@@ -23,8 +23,8 @@ RUN npm install -g @vue/cli @vue/cli-init
 # COPY PROJECT FILES
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
-ADD . ${DIR_NAME}
-WORKDIR ${DIR_NAME}/${PROJECT_NAME}
+RUN npx create-nuxt-app ${PROJECT_NAME}
+WORKDIR /${DIR_NAME}/${PROJECT_NAME}
 
 RUN npm install
 
@@ -32,3 +32,8 @@ RUN npm install
 # # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIRNAME=$(echo "${PWD##*/}") .
 #RUNNING CONTAINER
 # # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev ash
+
+# run NUXT
+# npm run dev 
+
+# nuxt generate
