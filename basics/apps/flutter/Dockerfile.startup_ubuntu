@@ -17,6 +17,6 @@ RUN yes | flutter doctor --android-licenses || true
 
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
-# RUN flutter create ${PROJECT_NAME}
-# WORKDIR ${PROJECT_NAME}
+RUN flutter create ${PROJECT_NAME}
+WORKDIR ${PROJECT_NAME}
 
