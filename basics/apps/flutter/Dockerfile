@@ -12,8 +12,15 @@ LABEL maintainer "imyme6yo@gmail"
 ARG DIR_NAME=code
 ARG PROJECT_NAME=project
 
+RUN yes | flutter doctor --android-licenses || true
+
 RUN mkdir ${DIR_NAME}
 ADD . ${DIR_NAME}
 WORKDIR ${DIR_NAME}/${PROJECT_NAME}
 
 RUN npm install
+
+#MAKING CONTAINER 
+# # docker build -t $(echo "${PWD##*/}"):dev --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .
+#RUNNING CONTAINER
+# # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev ash
