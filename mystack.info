@@ -1,0 +1,242 @@
+[[Tools]]
+Git
+Shell Script
+Data Structure
+Algorithms
+HTTP/HTTPs
+Design Pattern
+
+[[Front-end]]
+	<<BASIC>>
+		HTML
+	<<CSS>>
+		CSS
+		SASS
+		PostCSS
+		Less
+
+	<<CSS Framework>>
+		Bootstrap
+		Materialize CSS
+		Bulma
+		Senmantic UI
+	
+	<<CSS Architecutre>>
+		BEM
+		OOCSS
+		SMACSS
+	
+	<<LANGUAGE>>
+		JavaScript
+		TypeScript
+		Dart
+		CoffeeScript
+		WASM
+
+	<<PACKAGE MANAGEMENT>>
+		NPM
+		YARN
+
+	<<Module Bundler>>
+		Webpack
+		Parcel
+		Rollup
+
+	<<Task Runner>>
+		npm scripts
+		gulp
+
+	<<Linter / Formatter>>
+		Prettier	
+		ESLint
+		JSHint
+		JSLint
+		JSCS
+
+	<<Framework>>
+		Angular
+		Vue
+		Meteor
+
+	<<Library>>
+		React.js
+		Redux
+		MobX
+		RX
+		ngrx
+		vuex
+
+	<<Mobile>>
+		Ionic
+		NativeScript
+		Flutter
+		React Native
+
+	<<Desktop>>
+		Electron
+		Proton Native
+		Cario
+
+	<<PWA>>
+		Storage
+		Web Sockets
+		Service Workers
+		Location
+		Notification
+		Device Orientation
+		Payments
+		Credentials	
+		
+	<<Server Side Rendering>>
+		Next.js
+		After.js
+		Universal
+		Nuxt.js
+
+	<<Static Site Generators>>
+		GatsbyJS
+
+	<<Test>>
+		Jest
+		Enzyme
+		Cypress
+		Mocha
+		Chai
+		Ava
+		Karma
+		Jasmine
+		Protractor
+
+[[Back-end]]
+	<<Basic>>
+		Operating System
+		Linux
+		Windows
+		Network
+		Script
+	
+	<<Languages>>
+		Python
+		Ruby
+		Node.js
+		Go
+		Java
+		Rust
+		C/C++
+		Elixir
+		Scala
+		Erlang
+		Clojure
+		Haskell
+		Java
+		.Net
+		PHP
+	
+	<<RDBMS>>
+		Oracle
+		MySQL / MariaDB
+		PostgreSQL
+		MSSQL
+	
+	<<NoSQL>>
+		MongoDB
+		RethinkDB
+		Cassandra
+		Couchbase
+
+	<<Cache>>
+		Memcached
+		Redis
+
+	<<Message Brokers>>
+		RabbitMQ
+		Kafka
+
+	<<Search Engine>>
+		Elastic Search
+		Solr
+		Sphinx
+
+	<<Authentication>>
+		OAuth
+		Token Authentication
+		JWT
+		OpenID
+
+	<<Framework>>
+		Laravel
+		Symfony
+		Express
+		Django
+
+	<<Web Server>>
+		IIS
+		Apache
+		Nginx
+		Tomcat
+		Caddy
+
+	<<Optional>>
+		Docker
+		GraphQL
+		Websocket
+
+
+[[DevOpts]]
+	<<Languages>>
+		Python
+		Ruby
+		Node.js
+		Go
+		Java
+		Rust
+		C/C++
+	<<Basic>>
+		OS
+		Linux
+		Docker
+
+	<<Orchestration>>
+		Docker Swarm
+		Kubernetes
+		Mesos
+		Nomad
+
+		
+	<<Configuration & Provisioning>>
+		Ansible
+		Chef
+		Salt
+		Puppet
+		----------
+		Terraform
+		Cloud Formation
+
+	<<Logging>>
+		ELK Stack
+		Graylog
+		Splunk
+		Papertrail
+
+	<<Monitoring>>
+		Nagios
+		Icinga
+		Datado
+		Zabbix
+		Monit
+		AppDynamics
+		New Relic
+
+	<<Tool>>
+		Jenkins
+		Travis CI
+		Team City
+		Drone
+		Circle CI
+
+	<<Cloud Providers>>
+		AWS
+		Google App Engine
+		Azure
+		Digital Ocean
+		Heroku
