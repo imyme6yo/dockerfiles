@@ -13,6 +13,9 @@ LABEL maintainer "imyme6yo@gmail"
 ARG DIR_NAME=code
 ARG PROJECT_NAME=project
 
+RUN yes | flutter doctor --android-licenses || true
+
 RUN mkdir ${DIR_NAME}
 WORKDIR ${DIR_NAME}
 RUN flutter create ${PROJECT_NAME}
+
