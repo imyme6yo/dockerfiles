@@ -14,6 +14,6 @@ ARG PROJECT_NAME=project
 
 RUN mkdir ${DIR_NAME}
 ADD . ${DIR_NAME}
-WORKDIR ${DIR_NAME}/${PROJECT_NAME}
+WORKDIR ${DIR_NAME}
 
 RUN npm install

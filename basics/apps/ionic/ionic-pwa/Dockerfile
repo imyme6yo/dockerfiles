@@ -1,12 +1,14 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @CREATE_DATE: 20190128
+# @CREATE_DATE: 20190131
 # @UPDATE_DATE: 20190202
 
 # ARGUMENTS OF IMAGES
-ARG ANDROID_STUDIO_VERSION=3.2.1
+ARG SDK_VERSION=26.1.1
 ARG NODE_VERSION=8.15.0
-ARG TAG=${ANDROID_STUDIO_VERSION}-node${NODE_VERSION}-stretch
-FROM imyme6yo/android-studio:${TAG}
+ARG ALPINE_VERSION=3.8
+ARG TAG=26.1.1-node${NODE_VERSION}-alpine${ALPINE_VERSION}
+
+FROM android-sdk:${TAG}
 
 # MAINTAINER
 LABEL maintainer "imyme6yo@gmail.com"
@@ -15,17 +17,13 @@ LABEL maintainer "imyme6yo@gmail.com"
 ARG DIR_NAME=code
 ARG PROJECT_NAME=code
 
-# ANDROID SDK
-RUN sdkmanager --licenses
-
 #INSTALL IONIC
 RUN npm install -g ionic
-RUN npm install -g cordova
 
 # COPY PROJECT FILES
 RUN mkdir ${DIR_NAME}
-ADD . ${DIR_NAME}
 WORKDIR ${DIR_NAME}
+ADD . ${DIR_NAME}
 # WORKDIR ${DIR_NAME}/${PROJECT_NAME}
 
 RUN npm install
