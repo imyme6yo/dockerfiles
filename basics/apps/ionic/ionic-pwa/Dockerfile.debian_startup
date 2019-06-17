@@ -1,11 +1,12 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @CREATE_DATE: 20190128
+# @CREATE_DATE: 20190202
 # @UPDATE_DATE: 20190202
 
 # ARGUMENTS OF IMAGES
 ARG ANDROID_STUDIO_VERSION=3.2.1
 ARG NODE_VERSION=8.15.0
 ARG TAG=${ANDROID_STUDIO_VERSION}-node${NODE_VERSION}-stretch
+
 FROM imyme6yo/android-studio:${TAG}
 
 # MAINTAINER
@@ -14,9 +15,9 @@ LABEL maintainer "imyme6yo@gmail.com"
 # ARGUMENTS OF CONTAINER
 ARG DIR_NAME=code
 ARG PROJECT_NAME=code
+# STARTER VALUES = { blank, tabs, sidemenu }
+ARG STARTER=blank
 
-# ANDROID SDK
-RUN sdkmanager --licenses
 
 #INSTALL IONIC
 RUN npm install -g ionic
@@ -24,11 +25,18 @@ RUN npm install -g cordova
 
 # COPY PROJECT FILES
 RUN mkdir ${DIR_NAME}
-ADD . ${DIR_NAME}
 WORKDIR ${DIR_NAME}
-# WORKDIR ${DIR_NAME}/${PROJECT_NAME}
+RUN no | ionic start ${PROJECT_NAME} ${STARTER}
 
-RUN npm install
+WORKDIR ${PROJECT_NAME}
+RUN ionic cordova platform add android
+
+WORKDIR /${DIR_NAME}
+
+# INSTALL Node Modules
+# RUN npm install --save 
+# INSTALL Native Modeules
+# RUN ionic platform ..
 
 # MAKING IMAGE 
 # # docker build -t ionic:$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .

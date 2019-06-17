@@ -16,7 +16,7 @@ RUN yes | flutter doctor --android-licenses || true
 
 RUN mkdir ${DIR_NAME}
 ADD . ${DIR_NAME}
-WORKDIR ${DIR_NAME}/${PROJECT_NAME}
+WORKDIR ${DIR_NAME}
 
 RUN npm install
 
