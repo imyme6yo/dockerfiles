@@ -1,0 +1,76 @@
+LANG.
+    C++/C
+    dart
+    go
+    R
+    scala
+    python
+
+JAVA
+    mybatis
+    spring
+    hibernate
+    junit
+
+Database
+    couchDB
+    mongoDB
+    postGRE
+    pouchDB
+    SQLAlchemy
+    sqlite
+    redis
+
+CD/CI
+    ansible
+    docker
+    jenkins
+    git
+    Elastic stack
+
+Machine Learning / Big Data
+    tensorflow
+    keras
+    Deep Learning
+    Machine Learning
+    opencv
+    web crawling
+    scrapy
+    xpath
+
+Frameworks
+    Django 
+    Flask
+    fastapi
+    angular/ionic
+    flutter
+    meteor
+    kivy
+    unity
+
+WEB
+    sass
+    javascript
+    graphicQL
+    nginx
+    jasmine
+    svg
+
+
+Security
+    oauth
+    cryptograpy
+
+Blockchain
+
+Math
+    statistics
+    discrete math.
+    automata
+
+
+ETC.
+    excel
+    google lense
+    wordpress
+    sed / awk
