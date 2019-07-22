@@ -14,7 +14,6 @@ LABEL maintainer "imyme6yo@gmail.com"
 # ARGUMENTs
 ARG DIR_NAME=code
 ARG PROJECT_NAME=myapp
-ARG PORT=9212
 
 # Install Alpine Packages
 RUN apk update
@@ -26,10 +25,11 @@ RUN npm install -g @vue/cli
 RUN vue create ${PROJECT_NAME} --default
 
 RUN mkdir ${DIR_NAME}
-WORKDIR ${DIR_NAME}
+ADD . ${DIR_NAME}
+WORKDIR ${DIR_NAME}/${PROJECT_NAME}
+RUN npm install
 
 #
 # docker build -t vue:$(echo "${PWD##*/}") --build-arg DIR_NAME=$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .
 #
-# docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") vue:$(echo "${PWD##*/}") -p ${PORT}:${PORT} ash
-# npm run serve -- --port ${PORT}
+# docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") vue:$(echo "${PWD##*/}") ash
