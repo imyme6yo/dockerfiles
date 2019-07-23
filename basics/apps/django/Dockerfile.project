@@ -10,12 +10,14 @@ ARG VERSION=8.12.0
 
 FROM node:${VERSION}-alpine
 
-# MAINTAINER
-LABEL maintainer "imyme6yo@gmail.com"
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 # ARGUMENTS OF CONTAINER
 ARG DIR_NAME=code
-ARG PROJECT_NAME=code
+ARG PROJECT_NAME=myapp
 
 #INSTALL ANGULAR
 RUN npm install -g @angular/cli 

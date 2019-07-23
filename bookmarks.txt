@@ -1,0 +1,3 @@
+https://bestofjs.org/
+https://jamstack.org/
+projecthunt.io

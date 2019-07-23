@@ -10,8 +10,9 @@ ARG VERSION=8.12.0
 
 FROM node:${VERSION}-alpine
 
-# MAINTAINER
-LABEL maintainer "imyme6yo@gmail.com"
+# LABELs
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 # ARGUMENTS OF CONTAINER
 ARG DIR_NAME=code

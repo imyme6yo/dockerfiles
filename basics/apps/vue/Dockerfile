@@ -1,5 +1,6 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DATE: 20190712
+# @DRAFT: 20190722
+# @UPDATE: 20190723
 
 # ARGUMENTs
 
@@ -8,8 +9,10 @@ ARG NODE_VERSION=8.16.0
 
 FROM node:${NODE_VERSION}-alpine
 
-# LABELs
-LABEL maintainer "imyme6yo@gmail.com"
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 # ARGUMENTs
 ARG DIR_NAME=code
@@ -26,7 +29,11 @@ RUN npm install -g @vue/cli
 RUN vue create ${PROJECT_NAME} --default
 
 RUN mkdir ${DIR_NAME}
-WORKDIR ${DIR_NAME}
+WORKDIR ${DIR_NAME}/${PROJECT_NAME}
+
+RUN vue add apollo
+RUN vue add router
+RUN vue add vuex
 
 #
 # docker build -t vue:$(echo "${PWD##*/}") --build-arg DIR_NAME=$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .

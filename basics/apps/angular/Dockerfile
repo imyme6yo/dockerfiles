@@ -1,19 +1,22 @@
+# @AUTHOR: jon "imyme6yo@gmail.com"
+# @DRAFT: 20190115
+# @UPDATE: 20190723
 # Dockerfile for angular project
-# AUTHOR: jon "imyme6yo@gmail.com"
-# CREATE_DATE: 20190115
 
-# CONTAINER ARGUMENTS
+# Arguments
 ARG VERSION=8.12
 ARG TAG=${VERSION}-alpine
 
 FROM node:${TAG}
 
-# MAINTAINER
-LABEL maintainer "imyme6yo@gmail.com"
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 # PROJECTS ARGUMENTS
 ARG DIR_NAME=code
-ARG PROJECT_NAME=code
+ARG PROJECT_NAME=myapp
 
 #INSTALL ANGULAR
 RUN npm install -g @angular/cli 

@@ -1,5 +1,5 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DATE: 20190712
+# @DATE: 20190722
 
 # ARGUMENTs
 
@@ -9,7 +9,8 @@ ARG NODE_VERSION=8.16.0
 FROM node:${NODE_VERSION}-alpine
 
 # LABELs
-LABEL maintainer "imyme6yo@gmail.com"
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 # ARGUMENTs
 ARG DIR_NAME=code

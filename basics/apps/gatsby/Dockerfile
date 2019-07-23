@@ -1,12 +1,12 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DRAFT:
-# @UPDATE:
+# @DRAFT: 20190723
+# @UPDATE: 20190723
 # @DESCRIPTION:
-#           dd
+#               dd
 
-ARG ANGULAR_VERSION=7
+# Arguments
 
-FROM baseimage
+FROM ddd
 
 # Labels
 # Maintainer

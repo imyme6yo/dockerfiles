@@ -1,18 +1,18 @@
-# @AUTHOR jon "imyme6yo@gmail.com"
-# @DATE 190115
+# @AUTHOR: jon "imyme6yo@gmail.com"
+# @DRAFT: 190115
 ARG VERSION=1.0
 
 FROM imyme6yo/flutter:${VERSION}-ubuntu18.04
 
 LABEL maintainer "imyme6yo@gmail"
 
-ARG DIRNAME=project_code
+ARG DIR_NAME=code
 
 # RUN flutter create ${DIRNAME}
 
-RUN mkdir ${DIRNAME}
-ADD . ${DIRNAME}
-WORKDIR ${DIRNAME}
+RUN mkdir ${DIR_NAME}
+ADD . ${DIR_NAME}
+WORKDIR ${DIR_NAME}
 
-WORKDIR ${DIRNAME}
+WORKDIR ${DIR_NAME}
 

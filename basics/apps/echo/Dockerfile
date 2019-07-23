@@ -1,12 +1,20 @@
-#ARGUMENTS
-ARG ver=1.9.6
+# @AUTHOR: jon "imyme6yo@gmail.com"
+# @DRAFT: 20180921
+# @UPDATE: 20190723
 
-FROM golang:$ver-alpine3.7
+# Arguments
+ARG GO_VER=1.9.6
+ARG ALPINE_VER=3.7
 
-ARG dir=code
+FROM golang:${GO_VER}-alpine${ALPINE_VER}}
 
-# MAINTAINER
-MAINTAINER jon "imyme6yo@gmail.com"
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
+
+# Arguments
+ARG DIR=code
 
 # install git
 RUN apk update && apk upgrade && apk add --no-cache git

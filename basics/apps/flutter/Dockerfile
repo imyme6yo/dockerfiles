@@ -1,13 +1,19 @@
-# Dockerfile for flutter project
-# AUTHOR jon "imyme6yo@gmail.com"
-# CREATE DATE 190115
-# UPDATE DATE 190117
+# @AUTHOR: jon "imyme6yo@gmail.com"
+# @DRAFT: 190115
+# @UPDATE: 190723
+# @DESCRIPTION:
+#       Dockerfile for flutter project
+
+# Arguments
 ARG VERSION=1.0
 ARG TAG=${VERSION}-ubuntu18.04
 
 FROM imyme6yo/flutter:${TAG}
 
-LABEL maintainer "imyme6yo@gmail"
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 ARG DIR_NAME=code
 ARG PROJECT_NAME=project

@@ -1,6 +1,8 @@
-# ARGUMENT OF VERSION
-# DATE: 20180921
-# ARGUMENTS OF IMAGES
+# @AUTHOR: jon "imyme6yo@gmail.com"
+# @DRAFT: 20180921
+# @UPDATE: 20190723
+
+# Arguments
 # LTS 8.12.0
 # CURRENT 10.11.0
 ARG VER=8.12.0
@@ -11,8 +13,10 @@ FROM node:$VER-alpine
 # ARGUMENTS OF CONTAINER
 ARG DIR=code
 
-# MAINTAINER
-MAINTAINER jon "imyme6yo@gmail.com"
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 # COPY PROJECT FILES
 RUN mkdir /$DIR

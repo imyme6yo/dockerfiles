@@ -1,6 +1,8 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DATE: 20190115
-# ARGUMENTS OF IMAGES
+# @DRAFT: 20190115
+# @UPDATE: 20190723
+
+# Arguments
 
 # LTS 8.12.0
 # CURRENT 10.11.0
@@ -10,12 +12,14 @@ ARG VERSION=8.12.0
 
 FROM node:${VERSION}-stretch
 
-# MAINTAINER
-LABEL maintainer "imyme6yo@gmail.com"
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
 # ARGUMENTS OF CONTAINER
 ARG DIR_NAME=code
-ARG PROJECT_NAME=code
+ARG PROJECT_NAME=myapp
 
 #INSTALL ANGULAR
 RUN npm install -g @angular/cli 

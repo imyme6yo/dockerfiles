@@ -1,19 +1,25 @@
-# Dockerfile for kivy with python3
 
-# Future Plan: migration to alpine distribution 
+# @AUTHOR: jon "imyme6yo@gmail"
+# @DRAFT: 20180913
+# @UPDATE: 20190723
 
-# ARGUMENT OF VERSION
-# DATE: 20180913
+# @DESCRIPTION:
+#       Dockerfile for kivy with python3
+#       Future Plan: migration to alpine distribution 
+
+# Arguments 
 ARG VER=3.7
 
 FROM python:$VER
 
-# ARGUMENTS OF CONTAINER
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
+
+# Arguments
 ARG DIR=code
 ARG REQUIREMENT=requirements.text
-
-# MAINTAINER
-MAINTAINER jon "imyme6yo@gmail.com"
 
 # PACKAGE UPGRADE
 RUN apt-get update && apt-get -y upgrade
