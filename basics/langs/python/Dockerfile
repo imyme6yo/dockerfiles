@@ -11,6 +11,7 @@ ARG DIRNAME=project_code
 ARG PACKAGES=requirements.txt
 
 RUN apk update && apk update
+
 RUN python -m pip install pip --upgrade
 
 RUN mkdir ${DIRNAME}
