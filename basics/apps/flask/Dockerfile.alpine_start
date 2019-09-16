@@ -1,8 +1,29 @@
-FROM ubuntu:16.04
+# @AUTHOR: jon "imyme6yo@gmail.com"
+# @DRAFT: 20190822
+# @UPDATE DATE: 20190218
 
-MAINTAINER jon "imyme6yo@gmail.com"
+# ARGUMENTs
+ARG PYTHON_VER=3.7.4
+ARG ALPINE_VER=3.10
 
-RUN apt-get update && apt-get -y install curl
+FROM python:${PYTHON_VER}-alpine${ALPINE_VER}
 
-RUN curl https://install.meteor.com/ | sh 
+# Labels
+# Maintainer
+LABEL maintainer="jon"
+LABEL email="imyme6yo@gmail.com"
 
+# ARGUMENTs
+ARG DIR_NAME=code
+# ARG PORT=9212
+
+# Install Alpine Packages
+RUN apk update
+
+RUN pip install --upgrade pip
+RUN pip install Flask
+
+# docker build -t vue:$(echo "${PWD##*/}") --build-arg DIR_NAME=$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .
+#
+# docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") vue:$(echo "${PWD##*/}") -p ${PORT}:${PORT} ash
+# npm run serve -- --port ${PORT}
