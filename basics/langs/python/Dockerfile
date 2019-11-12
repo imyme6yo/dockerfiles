@@ -1,23 +1,26 @@
-# @DATE: 20190115
 # @AUTHOR: jon "imyme6yo@gmail.com"
+# @CREATE: 20190115
+# @UPDATE: 20191111
 
-ARG VERSION=3.7.2
+ARG PYTHON_VERSION=3.7.2
+ARG ALPINE_VERSION=3.7
 
-FROM python:${VERSION}-alpine3.7
+FROM python:${PYTHON_VERSION}-alpine${ALPINE_VERSION}
 
-LABEL maintainer "imyme6yo@gmail.com"
+LABEL maintainer "jon"
+LABEL email "imyme6yo@gmail.com"
 
-ARG DIRNAME=project_code
+ARG DIR=code
 ARG PACKAGES=requirements.txt
 
 RUN apk update && apk update
-
 RUN python -m pip install pip --upgrade
 
-RUN mkdir ${DIRNAME}
-ADD . ${DIRNAME}
-WORKDIR ${DIRNAME}
+RUN mkdir ${DIR}
+ADD . ${DIR}
+WORKDIR ${DIR}
 
+RUN pip install -r requirements
 #RUN pip install -r $PACKAGES
 
 #MAKING CONTAINER 

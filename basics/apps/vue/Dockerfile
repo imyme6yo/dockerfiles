@@ -3,7 +3,6 @@
 # @UPDATE: 20190723
 
 # ARGUMENTs
-
 ARG NODE_VERSION=8.16.0
 # ARG ALPINE_VERSION=3.9
 
@@ -14,7 +13,7 @@ FROM node:${NODE_VERSION}-alpine
 LABEL maintainer="jon"
 LABEL email="imyme6yo@gmail.com"
 
-# ARGUMENTs
+# Arguments
 ARG DIR_NAME=code
 ARG PROJECT_NAME=myapp
 ARG PORT=9212
