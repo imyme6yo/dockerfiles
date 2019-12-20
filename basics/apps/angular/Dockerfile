@@ -1,34 +1,36 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
 # @DRAFT: 20190115
-# @UPDATE: 20190723
+# @UPDATE: 20191021
 # Dockerfile for angular project
 
 # Arguments
-ARG VERSION=8.12
-ARG TAG=${VERSION}-alpine
+ARG NODE_VERSION=10.16.3
+ARG ALPINE_VERSION=3.8
+ARG TAG=${NODE_VERSION}-alpine
+# ARG VERSION=10.11.0
 
 FROM node:${TAG}
 
-# Labels
 # Maintainer
 LABEL maintainer="jon"
 LABEL email="imyme6yo@gmail.com"
 
-# PROJECTS ARGUMENTS
+# Project argurments
 ARG DIR_NAME=code
-ARG PROJECT_NAME=myapp
+ARG PROJECT_NAME=code
 
-#INSTALL ANGULAR
-RUN npm install -g @angular/cli 
+# Install Alpine Packages
+RUN apk update && apk upgrade
 
-# COPY PROJECT FILES
+# Copy project files
 RUN mkdir ${DIR_NAME}
+WORKDIR ${DIR_NAME}
 ADD . ${DIR_NAME}
 WORKDIR ${DIR_NAME}/${PROJECT_NAME}
 
 RUN npm install
 
 #MAKING CONTAINER 
-# # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIR_NAME=$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .
+# # docker build -t $(echo "${PWD##*/}"):dev --build-arg DIRNAME=$(echo "${PWD##*/}") .
 #RUNNING CONTAINER
 # # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") $(echo "${PWD##*/}"):dev ash
