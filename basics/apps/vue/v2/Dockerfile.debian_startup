@@ -1,16 +1,14 @@
 # @AUTHOR: jon "imyme6yo@gmail.com"
-# @DRAFT: 20190722
-# @UPDATE: 20190723
+# @DATE: 20190722
 
-# Arguments
+# ARGUMENTs
 
 ARG NODE_VERSION=8.16.0
 # ARG ALPINE_VERSION=3.9
 
 FROM node:${NODE_VERSION}-alpine
 
-# Labels
-# Maintainer
+# LABELs
 LABEL maintainer="jon"
 LABEL email="imyme6yo@gmail.com"
 
@@ -26,13 +24,13 @@ RUN npm install -g @vue/cli
 
 # Create Project by Default Settings
 RUN vue create ${PROJECT_NAME} --default
+RUN  printf 'y\n' | vue create ${PROJECT} --default
+
 
 RUN mkdir ${DIR_NAME}
-ADD . ${DIR_NAME}
-WORKDIR ${DIR_NAME}/${PROJECT_NAME}
-RUN npm install
+WORKDIR ${DIR_NAME}
 
 #
-# docker build -t vue:$(echo "${PWD##*/}") --build-arg DIR_NAME=$(echo "${PWD##*/}") --build-arg PROJECT_NAME=$(echo "${PWD##*/}") .
+# docker build -t vue:$(echo "${PWD##*/}") --build-arg DIR_NAME=$(echo "${PWD##*/}") --build-arg PROJECT_NAME=PROJECT_NAME .
 #
 # docker run --rm -it -v $(pwd)/:/$(echo "${PWD##*/}") vue:$(echo "${PWD##*/}") ash

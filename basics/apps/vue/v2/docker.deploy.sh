@@ -1,0 +1,1 @@
+docker run --rm -it -v $(pwd):/code -p 8119:3000 --name vue:dev ash
